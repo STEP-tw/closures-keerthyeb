@@ -32,8 +32,14 @@ const makeDeltaTracker = function(old){
 
 
 const makeFiboGenerator = undefined;
+
 const makeCycler = undefined;
-const curry = undefined;
+
+const curry = function(funref,arg1){
+  return function(arg2,arg3){
+    return funref(arg1,arg2,arg3);
+  }
+}
 
 const compose = function(funcRef1,funcRef2){
   return function(arg1,arg2){
