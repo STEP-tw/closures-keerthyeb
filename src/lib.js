@@ -17,7 +17,19 @@ const makeCounterFromZero = function(count = 0){
   }
 }
 
-const makeDeltaTracker = undefined;
+const makeDeltaTracker = function(old){
+  let deltaData = {old : old, delta :0 , new : old};
+  return function(delta){
+    if(delta != null){
+    deltaData.delta = delta;
+    deltaData.old = deltaData.new;
+    deltaData.new = deltaData.old + delta;
+    }
+    return deltaData; 
+  }
+}
+
+
 
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
