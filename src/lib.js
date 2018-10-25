@@ -6,14 +6,30 @@ const makeConstant = function(arg1){
 
 const makeCounterFromN = function(arg1){
   count = [];
-  count[arg1] = arg1 - 1;
+  count[arg1] = arg1;
   return function(){
     count[arg1] +=  1;
-    return count[arg1];
+    return count[arg1] - 1;
   }
 }
 
-const makeCounterFromZero = undefined;
+// const makeCounterFromZero = function(arg1){
+//   count = [];
+//   count[arg1] = 0;
+//   return function(){
+//     count[arg1] +=  1;
+//     return count[arg1] - 1;
+//   }
+// }
+
+const makeCounterFromZero = function(arg1){
+  count = 0 - 1;
+  return function(){
+    count += 1;
+    return count;
+  }
+}
+
 const makeDeltaTracker = undefined;
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
