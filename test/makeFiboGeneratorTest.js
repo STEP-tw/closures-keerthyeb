@@ -23,11 +23,11 @@ const testFiboGeneratorWithASingleArg = function() {
 
 const testFiboGeneratorWithTwoArgs = function() {
   let getNextFiboNumber = makeFiboGenerator(1,3);
-  assert.equal(1,getNextFiboNumber());
-  assert.equal(3,getNextFiboNumber());
-  assert.equal(4,getNextFiboNumber());
-  assert.equal(7,getNextFiboNumber());
-  assert.equal(11,getNextFiboNumber());
+   assert.equal(1,getNextFiboNumber());
+   assert.equal(3,getNextFiboNumber());
+   assert.equal(4,getNextFiboNumber());
+   assert.equal(7,getNextFiboNumber());
+   assert.equal(11,getNextFiboNumber());
 };
 
 const testMultipleFiboGenerators = function() {
