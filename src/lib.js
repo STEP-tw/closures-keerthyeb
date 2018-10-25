@@ -20,12 +20,14 @@ const makeCounterFromZero = function(count = 0){
 const makeDeltaTracker = function(old){
   let deltaData = {old : old, delta :0 , new : old};
   return function(delta){
+    let newObject = {};
     if(delta != null){
       deltaData.delta = delta;
       deltaData.old = deltaData.new;
       deltaData.new = deltaData.old + delta;
     }
-    return deltaData; 
+    Object.assign(newObject,deltaData);
+    return newObject;
   }
 }
 
