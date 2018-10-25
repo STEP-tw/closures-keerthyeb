@@ -5,13 +5,18 @@ const makeConstant = function(arg1){
 }
 
 const makeCounterFromN = function(arg1){
-  count = [];
-  count[arg1] = arg1;
   return function(){
-    count[arg1] +=  1;
-    return count[arg1] - 1;
+    return arg1++;
   }
 }
+// const makeCounterFromN = function(arg1){
+//   let count = [];
+//   count[arg1] = arg1;
+//   return function(){
+//     count[arg1] +=  1;
+//     return count[arg1] - 1;
+//   }
+// }
 
 // const makeCounterFromZero = function(arg1){
 //   count = [];
@@ -31,6 +36,7 @@ const makeCounterFromZero = function(arg1){
 }
 
 const makeDeltaTracker = undefined;
+
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
 const curry = undefined;

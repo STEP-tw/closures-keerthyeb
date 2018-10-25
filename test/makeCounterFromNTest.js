@@ -16,11 +16,11 @@ const testCounterBeginsCountingFromGivenNumber = function() {
 const testMultipleCounters = function() {
   let countOranges = makeCounterFromN(2);
   let countGrapes = makeCounterFromN(3);
-  //assert.equal(2, countOranges());
-  // assert.equal(3, countOranges());
-  // assert.equal(3, countGrapes());
-  // assert.equal(4, countGrapes());
-  // assert.equal(4, countOranges());
+  assert.equal(2, countOranges());
+   assert.equal(3, countOranges());
+   assert.equal(3, countGrapes());
+   assert.equal(4, countGrapes());
+   assert.equal(4, countOranges());
 };
 
  const testCounterWithNegativeNumber = function() {
