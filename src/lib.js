@@ -1,4 +1,9 @@
-const makeConstant = undefined;
+const makeConstant = function(arg1){
+  return function(){
+    return arg1;
+  }
+}
+
 const makeCounterFromN = undefined;
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
