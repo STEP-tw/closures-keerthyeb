@@ -19,9 +19,9 @@ const testComposeTwoFunctionsThatTakesOneArg = function() {
 
 const testComposeTwoFunctionsThatTakesTwoArgs = function() {
   let concatNonZeroValues=compose(removeZeroes,concatWith);
-  assert.deepEqual([1],concatNonZeroValues([1],[0]));
-  assert.deepEqual([1],concatNonZeroValues([0],[1]));
-  assert.deepEqual([1,1],concatNonZeroValues([1,0],[1,0]));
+   assert.deepEqual([1],concatNonZeroValues([1],[0]));
+   assert.deepEqual([1],concatNonZeroValues([0],[1]));
+   assert.deepEqual([1,1],concatNonZeroValues([1,0],[1,0]));
 };
 
 

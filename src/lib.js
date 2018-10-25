@@ -34,7 +34,13 @@ const makeDeltaTracker = function(old){
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
 const curry = undefined;
-const compose = undefined;
+
+const compose = function(funcRef1,funcRef2){
+  return function(arg1,arg2){
+    let firstOutPut = funcRef2(arg1,arg2);
+    return funcRef1(firstOutPut);
+  }
+  }
 
 exports.makeConstant=makeConstant;
 exports.makeCounterFromZero=makeCounterFromZero;
