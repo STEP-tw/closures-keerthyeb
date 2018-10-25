@@ -9,29 +9,11 @@ const makeCounterFromN = function(arg1){
     return arg1++;
   }
 }
-// const makeCounterFromN = function(arg1){
-//   let count = [];
-//   count[arg1] = arg1;
-//   return function(){
-//     count[arg1] +=  1;
-//     return count[arg1] - 1;
-//   }
-// }
 
-// const makeCounterFromZero = function(arg1){
-//   count = [];
-//   count[arg1] = 0;
-//   return function(){
-//     count[arg1] +=  1;
-//     return count[arg1] - 1;
-//   }
-// }
-
-const makeCounterFromZero = function(arg1){
-  count = 0 - 1;
+const makeCounterFromZero = function(count = 0){
   return function(){
     count += 1;
-    return count;
+    return count - 1;
   }
 }
 
