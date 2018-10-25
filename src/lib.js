@@ -33,7 +33,20 @@ const makeDeltaTracker = function(old){
 
 const makeFiboGenerator = undefined;
 
-const makeCycler = undefined;
+const makeCycler = function(arg1){
+  let newArray = arg1.slice();
+  let length = newArray.length;
+  let count = 0;
+  return function(){
+    if(count == length){
+      count = 0;
+    }
+    let output = newArray[count];
+    count +=1;
+    return output;
+  }
+}
+
 
 const curry = function(funref,arg1){
   return function(arg2,arg3){
