@@ -25,24 +25,20 @@ const makeDeltaTracker = function(old){
   }
 }
 
-
-
-const makeFiboGenerator = function(arg1, arg2){
-  if(arg1 == null && arg2 == null){
-    arg1 = 0 ;
-    arg2 = 1;
+const makeFiboGenerator = function(firstNumber, secondNumber){
+  if( !firstNumber && !secondNumber){
+    firstNumber = 0 ;
+    secondNumber = 1;
   }
-  if( arg1 && arg2 == null){
-    arg2 =  arg1;
-    arg1 = 0;
+  if( firstNumber && !secondNumber){
+    secondNumber =  firstNumber;
+    firstNumber = 0;
   }
-  let previousNumber = arg1;
-  let currentNumber = arg2;
   return function(){
-    let fibonacciNumber = previousNumber;
-    previousNumber = currentNumber;
-    currentNumber = previousNumber + fibonacciNumber;
-    return fibonacciNumber;
+    let nextNumber = firstNumber;
+    firstNumber = secondNumber;
+    secondNumber = firstNumber + nextNumber;
+    return nextNumber;
   }
 }
 
