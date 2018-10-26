@@ -56,9 +56,9 @@ const makeCycler = function(inputSource){
 }
 
 
-const curry = function(funref,arg1){
-  return function(arg2,arg3){
-    return funref(arg1,arg2,arg3);
+const curry = function(funref,value1){
+  return function(value2,value3){
+    return funref(value1,value2,value3);
   }
 }
 
