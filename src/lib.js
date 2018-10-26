@@ -43,17 +43,15 @@ const makeFiboGenerator = function(firstNumber, secondNumber){
 }
 
 
-const makeCycler = function(arg1){
-  let original = arg1.slice();
-  let length = original.length;
-  let count = 0;
+const makeCycler = function(inputSource){
+  let originalSource = inputSource.slice();
+  let sourceLength = originalSource.length;
+  let index = 0;
   return function(){
-    if(count == length){
-      count = 0;
+    if(index ==sourceLength){
+      index = 0;
     }
-    let cycleColour = original[count];
-    count +=1;
-    return cycleColour;
+    return originalSource[index++];
   }
 }
 
