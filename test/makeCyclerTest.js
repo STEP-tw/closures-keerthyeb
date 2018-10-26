@@ -19,20 +19,20 @@ const testCycleTwoElements = function() {
 const testCycleOnlyElementsGivenInitiallyEvenIfAnElementAddedLater = function() {
   let colours = ["black","white","red"];
   let cycleColours=makeCycler(colours);
-   assert.equal("black",cycleColours());
-   assert.equal("white",cycleColours());
-   assert.equal("red",cycleColours());
-   colours.push("yellow");
-   assert.equal("black",cycleColours());
+  assert.equal("black",cycleColours());
+  assert.equal("white",cycleColours());
+  assert.equal("red",cycleColours());
+  colours.push("yellow");
+  assert.equal("black",cycleColours());
 };
 
 const testCycleOnlyElementsGivenInitiallyEvenIfModifiedLater = function() {
   let colours = ["black","white"];
   let cycleColours=makeCycler(colours);
-   assert.equal("black",cycleColours());
-   assert.equal("white",cycleColours());
-   colours[0] = "yellow";
-   assert.equal("black",cycleColours());
+  assert.equal("black",cycleColours());
+  assert.equal("white",cycleColours());
+  colours[0] = "yellow";
+  assert.equal("black",cycleColours());
 };
 
 const runTests = function() {

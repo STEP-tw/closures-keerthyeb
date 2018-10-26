@@ -24,18 +24,18 @@ const testCreatingPartialFunctionWithOneArgument = function() {
 
 const testCreatingPartialFunctionWithArrayAsAnArgument = function() {
   let concatWith123=curry(concatWith,[1,2,3]);
-   assert.deepEqual([1,2,3,4,5,6],concatWith123([4,5,6]));
-   assert.deepEqual([1,2,3],concatWith123([]));
+  assert.deepEqual([1,2,3,4,5,6],concatWith123([4,5,6]));
+  assert.deepEqual([1,2,3],concatWith123([]));
 };
 
 const testCreatingPartialFunctionThatWillLaterBeSuppliedWithTwoArgs = function() {
   let isTenBetween=curry(isBetween,10);
-   assert.equal(true,isTenBetween(5,15));
-   assert.equal(false,isTenBetween(12,15));
+  assert.equal(true,isTenBetween(5,15));
+  assert.equal(false,isTenBetween(12,15));
 
   let paintYellow=curry(paintCar,"yellow");
-   assert.deepEqual({color:"yellow", make:"maruti", model:"swift" },paintYellow("maruti","swift"));
-   assert.deepEqual({color:"yellow", make:"ferrari", model:"GTC4" },paintYellow("ferrari","GTC4"));
+  assert.deepEqual({color:"yellow", make:"maruti", model:"swift" },paintYellow("maruti","swift"));
+  assert.deepEqual({color:"yellow", make:"ferrari", model:"GTC4" },paintYellow("ferrari","GTC4"));
 };
 
 const runTests = function() {

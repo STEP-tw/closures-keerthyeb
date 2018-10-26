@@ -1,12 +1,12 @@
-const makeConstant = function(arg1){
+const makeConstant = function(constant){
   return function(){
-    return arg1;
+    return constant;
   }
 }
 
-const makeCounterFromN = function(arg1){
+const makeCounterFromN = function(counter){
   return function(){
-    return arg1++;
+    return counter++;
   }
 }
 
@@ -16,17 +16,15 @@ const makeCounterFromZero = function(){
 
 const makeDeltaTracker = function(old){
   let deltaData = {old : old, delta :0 , new : old};
-  return function(delta){
+  return function(delta = 0){
     let newObject = {};
-    if(delta != null){
-      deltaData.delta = delta;
-      deltaData.old = deltaData.new;
-      deltaData.new = deltaData.old + delta;
-    }
-    Object.assign(newObject,deltaData);
-    return newObject;
+    deltaData.delta = delta;
+    deltaData.old = deltaData.new;
+    deltaData.new = deltaData.old + delta;
+    return Object.assign({},deltaData);
   }
 }
+
 
 
 const makeFiboGenerator = function(arg1, arg2){
@@ -35,9 +33,8 @@ const makeFiboGenerator = function(arg1, arg2){
     arg2 = 1;
   }
   if( arg1 && arg2 == null){
-    let temp = arg1;
+    arg2 =  arg1;
     arg1 = 0;
-    arg2 = temp;
   }
   let previousNumber = arg1;
   let currentNumber = arg2;
