@@ -62,9 +62,9 @@ const curry = function(funref,value1){
   }
 }
 
-const compose = function(function1,function2){
+const compose = function(outerFunction,innerFunction){
   return function(value1,value2){
-    return function1(function2(value1,value2));
+    return outerFunction(innerFunction(value1,value2));
   }
 }
 
