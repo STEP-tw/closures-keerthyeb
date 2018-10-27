@@ -42,9 +42,12 @@ const makeFiboGenerator = function(firstNumber, secondNumber){
   }
 }
 
+const returnArgument = function(value){
+  return value;
+}
 
 const makeCycler = function(inputSource){
-  let originalSource = inputSource.slice();
+  let originalSource = inputSource.map(returnArgument);
   let sourceLength = originalSource.length;
   let index = 0;
   return function(){
@@ -56,9 +59,9 @@ const makeCycler = function(inputSource){
 }
 
 
-const curry = function(funref,value1){
+const curry = function(func,value1){
   return function(value2,value3){
-    return funref(value1,value2,value3);
+    return func(value1,value2,value3);
   }
 }
 
